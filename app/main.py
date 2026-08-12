@@ -13,7 +13,7 @@ from app.routes.sp_routes import router as sp_router
 from contextlib import asynccontextmanager
 from app.db.mongodb import MongoManager
 from fastapi.staticfiles import StaticFiles
-from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -48,6 +48,13 @@ async def custom_swagger_ui_html():
         openapi_url="/openapi.json",
         title="Clefairy API",
         swagger_favicon_url="/static/app_logo.jpeg"  
+    )
+
+@app.get("/redoc", include_in_schema=False)
+async def redoc_html():
+    return get_redoc_html(
+        openapi_url="/openapi.json",
+        title="Clefairy API - ReDoc",
     )
 
 # Sakhi- Chat-Bot
