@@ -629,9 +629,7 @@ Potential improvements include:
 
 # 📜 License
 
-This project currently does not include an explicit license.
-
-If you plan to distribute or open-source the project, add an appropriate license such as MIT, Apache-2.0, or another license suitable for your use case.
+MIT License
 
 ---
 
