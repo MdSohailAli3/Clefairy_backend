@@ -19,7 +19,7 @@ The Women Safety App backend is designed to provide users with quick access to s
 * 👥 Community feed with posts, likes, comments, and media
 * 🎥 Daily safety tips with video uploads
 * ☁️ Cloudinary-based media storage
-* 💬 AI safety assistant powered by GPT through Replicate
+* 💬 AI safety assistant powered by OpenAI
 * 📞 Emergency contact management
 * 👮 Rajasthan Police SP directory
 * 🔐 Aadhaar-related security configuration
@@ -46,7 +46,7 @@ Women Safety App
 │   │   ├── Twilio
 │   │   ├── Google Routes
 │   │   ├── Cloudinary
-│   │   ├── Replicate
+│   │   ├── OpenAI
 │   │   └── ML Risk Model
 │   │
 │   ├── Database
@@ -59,7 +59,7 @@ Women Safety App
     ├── Google Maps / Routes API
     ├── Twilio
     ├── Cloudinary
-    └── Replicate
+    └── OpenAI
 ```
 
 ---
@@ -118,7 +118,7 @@ backend/
 | **Scikit-learn**      | ML-based route risk ranking  |
 | **NumPy**             | Numerical processing         |
 | **Cloudinary**        | Media storage                |
-| **Replicate**         | AI model integration         |
+| **OpenAI**            | AI model integration         |
 | **OpenAI GPT**        | Safety assistant             |
 | **Uvicorn**           | ASGI server                  |
 
@@ -169,7 +169,7 @@ CLOUDINARY_API_SECRET=<your-cloudinary-api-secret>
 
 AADHAAR_SECRET_KEY=<your-aadhaar-secret-key>
 
-REPLICATE_API_TOKEN=<your-replicate-api-token>
+OPENAI_API_KEY=<your-openai-api-key>
 ```
 
 > **Important:** Never commit your `.env` file or API credentials to GitHub.
@@ -395,7 +395,7 @@ Daily Safety Tip
 
 # 🤖 AI Safety Assistant
 
-The application includes an AI-powered safety assistant.
+The application includes an OpenAI-powered safety assistant.
 
 | Method | Endpoint                | Description                        |
 | ------ | ----------------------- | ---------------------------------- |
@@ -410,16 +410,14 @@ FastAPI
       ↓
 AI Service
       ↓
-Replicate
-      ↓
-GPT Model
+OpenAI
       ↓
 AI Response
       ↓
 User
 ```
 
-The `REPLICATE_API_TOKEN` environment variable is required for the AI integration.
+The `OPENAI_API_KEY` environment variable is required for the AI integration.
 
 ---
 
@@ -503,7 +501,7 @@ Used for:
 * Safety tip video storage
 * Community media uploads
 
-### Replicate
+### OpenAI
 
 Used for:
 
